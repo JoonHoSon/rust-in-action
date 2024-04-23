@@ -1,0 +1,20 @@
+[workspace]
+members = [
+    "ch1-penguins"
+]
+
+resolver = "2"
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = "z"
+strip = true
+lto = true
+codegen-units = 1
+
+[workspace.package]
+authors = ["JoonHo Son <joonho.son@me.com>"]
+edition = "2021"
+version = "0.1.0"
