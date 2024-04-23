@@ -14,12 +14,12 @@ fn main() {
             continue;
         }
 
-        let fields: Vec<_> = record.split(",").map(|f| f.trim()).collect();
+        let fields: Vec<&str> = record.split(",").map(|f| f.trim()).collect();
 
-        if cfg!(debug_assert) {
-            eprint!("debug: {:?} -> {:?}", record, fields);
+        if cfg!(debug_assertions) {
+            // release version에서는 포함되지 않음
+            eprintln!("debug: {:?} -> {:?}", record, fields);
         }
-
         let name = fields[0];
 
         if let Ok(length) = fields[1].parse::<f32>() {

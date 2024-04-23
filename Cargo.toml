@@ -1,6 +1,8 @@
 [workspace]
 members = [
-    "ch1-penguins"
+    "ch1-cerelas",
+    "ch1-penguins",
+    "ch1-race"
 ]
 
 resolver = "2"
